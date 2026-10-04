@@ -1,0 +1,14 @@
+services:
+  app:
+    ports: !override
+      - "8107:8000"
+    environment:
+      APP_URL: http://localhost:8107
+  db:
+    ports: !override
+      - "33107:3306"
+    mem_limit: 384m
+  phpmyadmin:
+    profiles: ["tools"]
+    ports:
+      - "9107:80"
